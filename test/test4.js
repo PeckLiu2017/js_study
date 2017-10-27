@@ -1,14 +1,36 @@
-/* 类实例的创建也可能导致内存消耗的问题
- * 这时可以把重复用到的代码提取出来
- * 并用this 获取访问权限
+/* 函数共享
+ * 同时将方法封装到 methods 中
+ * 维护方法时只需在 methods 一处修改
  */
+// var Car = function(loc) {
+//     var obj = { loc:loc };
+//     extend(obj,methods);
+//     return obj;
+// };
+//
+// var methods = {
+//   move : function() {
+//       this.loc++;
+//   }
+// }
+//
+// function extend(obj,methods) {
+//   for (var i in methods) {
+//     obj[i] = methods[i]
+//   }
+// }
+
 var Car = function(loc) {
     var obj = { loc:loc };
-    extend(obj,methods);
+    extend(obj,Car.methods);
     return obj;
 };
 
-var methods = {
+/* Car.methods 只是简单的属性访问，
+ * 既不用为每个实例都消耗内存，
+ * 也能精简代码
+ */
+Car.methods = {
   move : function() {
       this.loc++;
   }
