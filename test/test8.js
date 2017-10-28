@@ -1,7 +1,5 @@
-/* 原型委托提升性能
- * create 方法的作用
- * 当实例中属性查找失败时
- * 我们可以继续在 Car.methods 中查找
+/*
+ * 超类和子类的写法
  */
 var Car = function(loc) {
   var obj = {loc: loc};
