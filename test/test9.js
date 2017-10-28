@@ -23,13 +23,18 @@ var Van = function (loc) {
  * 因此在 Var.prototype 增加的方法会被添加到 Car.prototype
  * 所以用 Object.create(Car.prototype) 来实现复制委托
  */
-Var.prototype = Object.create(Car.prototype)
+Van.prototype = Object.create(Car.prototype)
+Van.prototype.constructor = Van;
+Van.prototype.grab = function () {
+  /*...*/
+}
 
 var zed = new Car(3);
 zed.move();
 console.log(zed);
 
 var amy = new Van(9);
+console.log(amy.loc);
 amy.move();
 amy.grab();
-console.log(amy);
+console.log(amy.constructor);
