@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Function Arguments Example 1</title>
+  <script type="text/javascript">
+  // Pass parameters of the parameter is passed by value, not directly manipulate memory objects.
+  // So, when obj is overridden, it's just a local variable that is destroyed at the end of the function,
+  // obj.name's change do not affect the person.name outside
+    function setName(obj) {
+      obj.name = "Nicholas";
+      obj = new Object();
+      obj.name = "Greg";
+      alert(obj.name); //"Greg"
+    }
+    var person = new Object();
+    setName(person);
+    alert(person.name); //"Nicholas"
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
