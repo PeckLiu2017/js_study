@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+</head>
+
+<body>
+  <div id="clickme">
+    Click here
+  </div>
+  <img id="book" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1510123329&di=8ca405b6bf819a1cf82e559733f550ab&imgtype=jpg&er=1&src=http%3A%2F%2Fimages.haiwainet.cn%2F20171101%2F1509513763704806.jpg" alt="" width="100" height="100" style="position: relative; left: 500px;" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+  <script type="text/javascript">
+    $('#clickme').click(function() {
+      $this = $('#book')
+      $this.animate({
+        opacity: 0.5,
+        // left: '+=50',
+        height: '200',
+        width: '200',
+        // transition: 'transform 1s',
+      }, 3000, function() {
+        // Animation complete.
+        $this.css({
+          // transformOrigin: '100%',
+          // transition 可以和 height: '100' width: '100' 写在一起
+          // transition: 'transform 5s',
+          // 立即变高
+          // height: '100',
+          // width: '100',
+          // 缓缓变宽
+          transform : 'scale(2,1)',
+          opacity: 0.7,
+        })
+      });
+    });
+  </script>
+</body>
+
+</html>
