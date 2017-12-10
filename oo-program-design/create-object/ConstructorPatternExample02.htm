@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Constructor Pattern Example 2</title>
+    <script type="text/javascript">
+
+        function Person(name, age, job){
+            this.name = name;
+            this.age = age;
+            this.job = job;
+            this.sayName = function(){
+                alert(this.name);
+            };
+        }
+
+        var person = new Person("Nicholas", 29, "Software Engineer");
+        person.sayName();   //"Nicholas"
+
+        Person("Greg", 27, "Doctor");  //adds to window
+        window.sayName();   //"Greg"
+
+        var o = new Object();
+        Person.call(o, "Kristen", 25, "Nurse");
+        o.sayName();    //"Kristen"
+
+        // 构造函数模式虽然好用，但也并非没有缺点。使用构造函数的主要问题，就是每个方法都要在每个实例上重新创建一遍。
+        // alert(person1.sayName == person2.sayName);  //false
+        // 然而，创建两个完成同样任务的 Function 实例的确没有必要
+    </script>
+</head>
+<body>
+
+</body>
+</html>
