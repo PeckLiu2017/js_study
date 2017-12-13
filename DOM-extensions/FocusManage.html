@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Focus Manage</title>
+</head>
+
+<body>
+  <input id="myButton" type="button" name="button" value="Focus Manage Test"></button>
+  <script type="text/javascript">
+    var button = document.getElementById("myButton");
+    button.focus();
+    alert(document.activeElement === button); //true
+    alert(document.hasFocus()); //true
+    console.log(document.activeElement);
+  </script>
+</body>
+
+</html>
