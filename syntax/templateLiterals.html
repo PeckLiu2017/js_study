@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Template Literals</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+  // Template literals are essentially string literals that include embedded expressions.
+    const student = {
+      name: 'Richard Kalehoff',
+      guardian: 'Mr. Kalehoff'
+    };
+
+    const teacher = {
+      name: 'Mrs. Wilson',
+      room: 'N231'
+    }
+
+    let message = student.name + ' please see ' + teacher.name + ' in ' + teacher.room + ' to pick up your report card.';
+    console.log(message);
+
+    // This works alright, but it gets more complicated when you need to build multi-line strings.
+    let note = teacher.name + ',\n\n' +
+      'Please excuse ' + student.name + '.\n' +
+      'He is recovering from the flu.\n\n' +
+      'Thank you,\n' +
+      student.guardian;
+
+    console.log(note);
+
+    let message1 = `${student.name} please see ${teacher.name} in ${teacher.room} to pick up your report card.`;
+    console.log(message1);
+
+    let note1 = `${teacher.name} ,
+
+      Please excuse  ${student.name} .
+      He is recovering from the flu.
+      Thank you,
+      ${student.guardian}`;
+
+    console.log(note1);
+  </script>
+</body>
+
+</html>
