@@ -1,3 +1,5 @@
+/* step 2:assign value easily */
+
 // In ES6, you can extract data from arrays and objects into distinct variables using destructuring.
 // The example shows extracting values from an array.
 const point = [10, 25, -34];
