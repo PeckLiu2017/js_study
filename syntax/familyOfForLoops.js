@@ -45,3 +45,4 @@ for (const index in digits) {
 // }
 
 // The forEach loop is another type of for array looping in JavaScript
+//  There is also no way to stop or break a forEach loop.
