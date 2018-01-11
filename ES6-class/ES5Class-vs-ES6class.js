@@ -18,6 +18,7 @@ jamesPlane.startEngines();
 
 // ES6
 class Plane {
+  // constructor is not in prototype, it generates by keyword 'new'
   constructor(numEngines) {
     this.numEngines = numEngines;
     this.enginesActive = false;
