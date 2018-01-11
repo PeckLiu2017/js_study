@@ -17,6 +17,7 @@ class Tree {
 
 class Maple extends Tree {
   constructor(syrupQty = 15, size, leaves) {
+    // super must be called before this
     super(size, leaves);
     this.syrupQty = syrupQty;
   }
@@ -83,3 +84,10 @@ const myMaple = new Maple(15, 5);
 myMaple.changeSeason('fall');
 myMaple.gatherSyrup();
 myMaple.changeSeason('spring');
+
+/* Instance */
+class Toy {}
+class Dragon extends Toy {}
+const dragon1 = new Dragon();
+
+console.log(dragon1 instanceof Toy); //true
