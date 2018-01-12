@@ -10,3 +10,11 @@ console.log(iterator.next()); // {value: 'February', done: false}
 for (const month of months) {
   console.log(month);
 }
+
+// Add or delete an item in a Set
+let myFavoriteFlavors = new Set();
+myFavoriteFlavors.add('chocolate chip');
+myFavoriteFlavors.add('cookies and cream');
+myFavoriteFlavors.add('strawberry');
+myFavoriteFlavors.add('vanilla');
+myFavoriteFlavors.delete('strawberry');
