@@ -19,7 +19,7 @@ const james = {
 
 james[Symbol.iterator] = function() {
   const keys = Object.keys(this);
-  return { // this is the iterator object, returning a single element, the string "bye"
+  return { // this is the iterator object, returning elements
     next: function() {
       if (this._index <= keys.length-2) {
         this._index += 1;
