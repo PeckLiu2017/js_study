@@ -57,3 +57,29 @@ console.log(positions.join('\n'));
 // Kavita is stunning!
 // Orit is awe-inspiring!
 // Richard is magnificent!
+
+// Because the first call to .next() passes in some data.
+// But that data doesn't get stored anywhere.
+// The last call to .next() should have some data since it's being yielded into the last call to toppings.push().
+function* createSundae() {
+    const toppings = [];
+
+    toppings.push(yield);
+    toppings.push(yield);
+    toppings.push(yield);
+
+    return toppings;
+}
+
+var it = createSundae();
+it.next('hot fudge');
+it.next('sprinkles');
+it.next('whipped cream');
+it.next();
+// {value: Array(3), done: true}
+// done:true
+// value:Array(3)
+// 0:"sprinkles"
+// 1:"whipped cream"
+// 2:undefined
+// length:3
